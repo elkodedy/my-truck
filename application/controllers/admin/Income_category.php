@@ -6,7 +6,8 @@ class Income_category extends CI_Controller
     {
         parent::__construct();
         $this->load->model('m_income_category');
-        if (!$this->session->userdata('user_id') or $this->session->userdata('user_group') != 1) {
+        if (!($this->session->userdata('user_id'))) {
+            // if (!$this->session->userdata('user_id') or $this->session->userdata('user_group') != 1) {
             // ALERT
             $alertStatus  = 'failed';
             $alertMessage = 'Anda tidak memiliki Hak Akses atau Session anda sudah habis';

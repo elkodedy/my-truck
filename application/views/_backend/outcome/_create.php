@@ -53,7 +53,7 @@
 
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Jenis Pengeluaran <span style="color:red">*</span></b></label>
-                                        <select class="form-control select2" name="outcome_category_id" required style="width:100%">
+                                        <select class="form-control select2" name="outcome_category_id" required style="width:100%" onchange="selectOutcome(this.value)">
                                             <option value="">-Pilih Jenis Pengeluaran-</option>
                                             <?php
                                             foreach ($outcome_category as $nw) {
@@ -63,7 +63,7 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" id="outcome_name" style="display: none;">
                                         <label for=""><b style="color: black">Pengeluaran <span style="color:red">*</span></b></label>
                                         <input type="text" class="form-control" placeholder="Pengeluaran" name="outcome_name" required="required">
                                     </div>

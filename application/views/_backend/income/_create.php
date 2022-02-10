@@ -53,7 +53,7 @@
 
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Jenis Pemasukkan <span style="color:red">*</span></b></label>
-                                        <select class="form-control select2" name="income_category_id" required style="width:100%">
+                                        <select class="form-control select2" name="income_category_id" required style="width:100%" onchange="selectIncome(this.value)">
                                             <option value="">-Pilih Jenis Pemasukkan-</option>
                                             <?php
                                             foreach ($income_category as $row) {
@@ -63,9 +63,9 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" id="income_name" style="display: none;">
                                         <label for=""><b style="color: black">Pemasukkan <span style="color:red">*</span></b></label>
-                                        <input type="text" class="form-control" placeholder="Pemasukkan" name="income_name" required="required">
+                                        <input type="text" class="form-control" placeholder="Pemasukkan" name="income_name">
                                     </div>
 
                                     <div class="form-group">

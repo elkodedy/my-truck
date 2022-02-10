@@ -24,9 +24,13 @@ class outcome extends CI_Controller
     {
         $this->session->unset_userdata('sess_search_outcome');
 
+        $user = '';
+        if ($this->session->userdata('user_group') == 3)
+            $user = $this->session->userdata('user_id');
+
         // PAGINATION
         $baseUrl    = base_url() . "admin/outcome/index/";
-        $totalRows  = count((array) $this->m_outcome->read('', '', '', ''));
+        $totalRows  = count((array) $this->m_outcome->read('', '', '', '', $user));
         $perPage    = $this->session->userdata('sess_rowpage');
         $uriSegment = 4;
         $paging     = generatePagination($baseUrl, $totalRows, $perPage, $uriSegment);
@@ -39,7 +43,7 @@ class outcome extends CI_Controller
         //DATA
         $data['setting'] = getSetting();
         $data['title']   = 'Pengeluaran';
-        $data['outcome']    = $this->m_outcome->read($perPage, $page, '', '');
+        $data['outcome']    = $this->m_outcome->read($perPage, $page, '', '', $user);
 
         // TEMPLATE
         $view         = "_backend/outcome/data";
@@ -57,9 +61,13 @@ class outcome extends CI_Controller
             $data['search'] = $this->session->userdata('sess_search_outcome');
         }
 
+        $user = '';
+        if ($this->session->userdata('user_group') == 3)
+            $user = $this->session->userdata('user_id');
+
         // PAGINATION
         $baseUrl    = base_url() . "admin/outcome/search/" . $data['search'] . "/";
-        $totalRows  = count((array)$this->m_outcome->read('', '', $data['search'], ''));
+        $totalRows  = count((array)$this->m_outcome->read('', '', $data['search'], '', $user));
         $perPage    = $this->session->userdata('sess_rowpage');
         $uriSegment = 5;
         $paging     = generatePagination($baseUrl, $totalRows, $perPage, $uriSegment);
@@ -72,7 +80,7 @@ class outcome extends CI_Controller
         //DATA
         $data['setting'] = getSetting();
         $data['title']   = 'Pengeluaran';
-        $data['outcome']    = $this->m_outcome->read($perPage, $page, $data['search'], '');
+        $data['outcome']    = $this->m_outcome->read($perPage, $page, $data['search'], '', $user);
 
         // TEMPLATE
         $view         = "_backend/outcome/data";

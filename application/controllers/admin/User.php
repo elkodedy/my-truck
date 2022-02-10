@@ -31,8 +31,6 @@ class User extends CI_Controller {
         $data['links']      = $paging['links'];
         $data['total_data'] = $totalRows ;
         
-
-        
         //DATA
         $data['setting'] = getSetting();
         $data['title']   = 'User';
@@ -153,4 +151,3 @@ class User extends CI_Controller {
     }
     
 }
-?>

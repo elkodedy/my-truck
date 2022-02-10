@@ -65,81 +65,83 @@
                                 echo "Kata Kunci Pencarian : <span class='label label-danger label-inline font-weight-lighter mr-2'>" . $search . "</span><hr style='border: 0.5px dashed #d2d6de'>";
                             }
                             ?>
-                            <table class="table table-bordered">
-                                <tr style="background-color: gray;color:white">
-                                    <th style="width: 60px">No</th>
-                                    <th style="width: 20%">#aksi</th>
-                                    <th>Nama Truk</th>
-                                    <th>Nomor Plat</th>
-                                    <th>Nomor STNK</th>
-                                    <th>Merk</th>
-                                    <th>Warna Body</th>
-                                    <th>Tahun Keluar</th>
-                                </tr>
-                                <?php
-                                if ($truck) {
-                                    $nox = 1;
-                                    $no = 1;
-                                    foreach ($truck as $key) {
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <tr style="background-color: gray;color:white">
+                                        <th style="width: 60px">No</th>
+                                        <th style="width: 20%">#aksi</th>
+                                        <th>Nama Truk</th>
+                                        <th>Nomor Plat</th>
+                                        <th>Nomor STNK</th>
+                                        <th>Merk</th>
+                                        <th>Warna Body</th>
+                                        <th>Tahun Keluar</th>
+                                    </tr>
+                                    <?php
+                                    if ($truck) {
+                                        $nox = 1;
+                                        $no = 1;
+                                        foreach ($truck as $key) {
 
-                                ?>
-                                        <tr>
-                                            <td><?php echo $no + $numbers; ?></td>
-                                            <td>
-                                                <!-- <a href="<?php echo site_url('admin/truck/detail_page/' . $key->truck_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a> -->
-                                                <a href="<?php echo site_url('admin/truck/update_page/' . $key->truck_id) ?>" class="btn btn-xs btn-flat btn-warning">update</a>
-                                                <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->truck_id; ?>">hapus</button>
-                                            </td>
-                                            <td><?php echo $key->truck_name; ?></td>
-                                            <td><?php echo $key->truck_plate; ?></td>
-                                            <td><?php echo $key->truck_stnk; ?></td>
-                                            <td><?php echo $key->truck_brand; ?></td>
-                                            <td><?php echo $key->truck_color; ?></td>
-                                            <td><?php echo $key->truck_year; ?></td>
-                                        </tr>
+                                    ?>
+                                            <tr>
+                                                <td><?php echo $no + $numbers; ?></td>
+                                                <td>
+                                                    <!-- <a href="<?php echo site_url('admin/truck/detail_page/' . $key->truck_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a> -->
+                                                    <a href="<?php echo site_url('admin/truck/update_page/' . $key->truck_id) ?>" class="btn btn-xs btn-flat btn-warning">update</a>
+                                                    <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->truck_id; ?>">hapus</button>
+                                                </td>
+                                                <td><?php echo $key->truck_name; ?></td>
+                                                <td><?php echo $key->truck_plate; ?></td>
+                                                <td><?php echo $key->truck_stnk; ?></td>
+                                                <td><?php echo $key->truck_brand; ?></td>
+                                                <td><?php echo $key->truck_color; ?></td>
+                                                <td><?php echo $key->truck_year; ?></td>
+                                            </tr>
 
 
 
-                                        <!-- Modal Delete-->
-                                        <div class="modal fade" id="modalDelete<?php echo $key->truck_id; ?>" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <i aria-hidden="true" class="ki ki-close"></i>
-                                                        </button>
-                                                    </div>
-                                                    <?php echo form_open("admin/truck/delete") ?>
-                                                    <div class="modal-body">
-                                                        Apakah anda yakin akan menghapus data berita ini ?
-                                                        <?php echo csrf(); ?>
-                                                        <input type="hidden" class="form-control" name="truck_id" required="required" value="<?php echo $key->truck_id; ?>">
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-danger font-weight-bold">Hapus</button>
-                                                        <?php echo form_close(); ?>
-                                                        <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Batal</button>
+                                            <!-- Modal Delete-->
+                                            <div class="modal fade" id="modalDelete<?php echo $key->truck_id; ?>" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <i aria-hidden="true" class="ki ki-close"></i>
+                                                            </button>
+                                                        </div>
+                                                        <?php echo form_open("admin/truck/delete") ?>
+                                                        <div class="modal-body">
+                                                            Apakah anda yakin akan menghapus data berita ini ?
+                                                            <?php echo csrf(); ?>
+                                                            <input type="hidden" class="form-control" name="truck_id" required="required" value="<?php echo $key->truck_id; ?>">
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="submit" class="btn btn-danger font-weight-bold">Hapus</button>
+                                                            <?php echo form_close(); ?>
+                                                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">Batal</button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
 
 
-                                <?php
-                                        $no++;
-                                    }
-                                } else {
-                                    echo '
+                                    <?php
+                                            $no++;
+                                        }
+                                    } else {
+                                        echo '
                                         <tr>
                                             <td colspan="3">Tidak ada ditemukan</td>
                                         </tr>
                                         ';
-                                }
-                                ?>
+                                    }
+                                    ?>
 
 
-                            </table>
+                                </table>
+                            </div>
                         </div>
                         <div class="box-footer">
 

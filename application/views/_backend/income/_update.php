@@ -55,8 +55,9 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <input type="hidden" class="form-control" name="income_id" required="required" value="<?php echo $income[0]->income_id; ?>">
                                         <label for=""><b style="color: black">Jenis Pemasukkan <span style="color:red">*</span></b></label>
-                                        <select class="form-control select2" name="income_category_id" required style="width:100%">
+                                        <select class="form-control select2" name="income_category_id" required style="width:100%" onchange="selectIncome(this.value)">
                                             <option value="">-Pilih Jenis Pemasukkan-</option>
                                             <?php
                                             foreach ($income_category as $nw) {
@@ -70,9 +71,8 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" id="income_name" style="display: <?php if ($income[0]->income_category_id != 1) echo 'none'; ?>;">
                                         <label for=""><b style="color: black">Pemasukkan <span style="color:red">*</span></b></label>
-                                        <input type="hidden" class="form-control" name="income_id" required="required" value="<?php echo $income[0]->income_id; ?>">
                                         <input type="text" class="form-control" placeholder="Pemasukkan" name="income_name" required="required" value="<?php echo $income[0]->income_name; ?>">
                                     </div>
 

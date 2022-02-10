@@ -149,7 +149,6 @@ class truck extends CI_Controller
         // POST
         $data['truck_id']          = '';
         $data['truck_name']      = $this->input->post('truck_name');
-        $data['truck_base_modal']      = $this->input->post('truck_base_modal');
         $data['truck_plate']      = $this->input->post('truck_plate');
         $data['truck_brand']      = $this->input->post('truck_brand');
         $data['truck_year']      = $this->input->post('truck_year');
@@ -204,7 +203,6 @@ class truck extends CI_Controller
 
         $data['truck_id']        = $this->input->post('truck_id');
         $data['truck_name']      = $this->input->post('truck_name');
-        $data['truck_base_modal']      = $this->input->post('truck_base_modal');
         $data['truck_plate']     = $this->input->post('truck_plate');
         $data['truck_brand']     = $this->input->post('truck_brand');
         $data['truck_year']      = $this->input->post('truck_year');

@@ -1,43 +1,44 @@
-           
-            <footer class="main-footer">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 0.0.1
-                </div>
-                <strong>Copyright &copy; 2021 <?php echo $setting[0]->setting_owner_name;?>.</strong> All rights reserved.
-            </footer>
-            
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Version</b> 0.0.1
+            </div>
+            <strong>Copyright &copy; 2021 <?php echo $setting[0]->setting_owner_name; ?>.</strong> All rights reserved.
+        </footer>
+
         </div>
-       
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/jquery/dist/jquery.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/select2/dist/js/select2.full.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-plugin/timepicker/bootstrap-timepicker.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-plugin/iCheck/icheck.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-component/fastclick/lib/fastclick.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-dist/js/adminlte.min.js"></script>
-        <script src="<?php echo base_url();?>assets/core-admin/core-dist/js/demo.js"></script>
+
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/jquery/dist/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/select2/dist/js/select2.full.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-plugin/timepicker/bootstrap-timepicker.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-plugin/iCheck/icheck.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-component/fastclick/lib/fastclick.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-dist/js/adminlte.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/core-admin/core-dist/js/demo.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/core-thirdparty/ckeditor/ckeditor.js"></script>
         <script type="text/javascript" src="<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.js"></script>
 
         <script>
-            $(document).ready(function () {
-              $('.sidebar-menu').tree();
-              $('.preloader').fadeOut();
+            $(document).ready(function() {
+                $('.sidebar-menu').tree();
+                $('.preloader').fadeOut();
 
-              $("#rowpage").change(function(){
-					var row = $("#rowpage").val();
-					$.ajax({
-						type      : "POST",
-						url       : "<?php echo base_url(); ?>admin/setting/setRows",
-						data      : {row: row},
-						success   : function(msg){
-							location.reload();
-						}
-					});
-				});
+                $("#rowpage").change(function() {
+                    var row = $("#rowpage").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "<?php echo base_url(); ?>admin/setting/setRows",
+                        data: {
+                            row: row
+                        },
+                        success: function(msg) {
+                            location.reload();
+                        }
+                    });
+                });
 
 
                 //Select2
@@ -52,9 +53,9 @@
                 //iCheck for checkbox and radio inputs
                 $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
                     checkboxClass: 'icheckbox_minimal-blue',
-                    radioClass   : 'iradio_minimal-blue'
+                    radioClass: 'iradio_minimal-blue'
                 });
-                
+
 
                 //Colorpicker
                 $('.colorpicker').colorpicker();
@@ -65,17 +66,42 @@
                 });
 
                 // CKEDITOR
-                CKEDITOR.replace('editor',{
-                    toolbar : 'MyToolbar',
-                    width:"100%",
-                    filebrowserBrowseUrl : '<?php echo base_url();?>assets/core-thirdparty/ckfinder/ckfinder.html',
-                    filebrowserImageBrowseUrl : '<?php echo base_url();?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Images',
-                    filebrowserFlashBrowseUrl : '<?php echo base_url();?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Flash',
+                CKEDITOR.replace('editor', {
+                    toolbar: 'MyToolbar',
+                    width: "100%",
+                    filebrowserBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html',
+                    filebrowserImageBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Images',
+                    filebrowserFlashBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Flash',
                 });
 
 
 
             })
+
+            function selectIncome(val) {
+                if (val == 1) {
+                    $('#income_name').show();
+                    $('#income_name input').attr('required', true);
+                    $('#income_name input').val("");
+                } else {
+                    $('#income_name').hide();
+                    $('#income_name input').val("-");
+                    $('#income_name input').attr('required', false);
+                }
+            }
+
+            function selectOutcome(val) {
+                if (val == 1) {
+                    $('#outcome_name').show();
+                    $('#outcome_name input').attr('required', true);
+                    $('#income_name input').val("");
+                } else {
+                    $('#outcome_name').hide();
+                    $('#outcome_name input').val("-");
+                    $('#outcome_name input').attr('required', false);
+                }
+            }
         </script>
-    </body>
-</html>
+        </body>
+
+        </html>

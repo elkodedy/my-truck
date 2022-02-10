@@ -70,10 +70,10 @@
                                         </select>
                                     </div>
 
-                                    <div class="form-group">
+                                    <div class="form-group" id="outcome_name" style="display: <?php if ($outcome[0]->outcome_category_id != 1) echo 'none'; ?>;">
                                         <label for=""><b style="color: black">Pengeluaran <span style="color:red">*</span></b></label>
                                         <input type="hidden" class="form-control" name="outcome_id" required="required" value="<?php echo $outcome[0]->outcome_id; ?>">
-                                        <input type="text" class="form-control" placeholder="Pengeluaran" name="outcome_name" required="required" value="<?php echo $outcome[0]->outcome_name; ?>">
+                                        <input type="text" class="form-control" placeholder="Pengeluaran" name="outcome_name" value="<?php echo $outcome[0]->outcome_name; ?>">
                                     </div>
 
                                     <div class="form-group">

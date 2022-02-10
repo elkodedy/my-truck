@@ -12,7 +12,6 @@ CREATE TABLE `tbl_web_truck` (
     `truck_color` varchar(50) NOT NULL,
     `truck_stnk` varchar(50) NOT NULL,
     `truck_year` int(11) NOT NULL,
-    `truck_base_modal` int(11) NOT NULL,
     `truck_desc` text NOT NULL,
     `createtime` datetime NOT NULL,
     `update_at` datetime NOT NULL

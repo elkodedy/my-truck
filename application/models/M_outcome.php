@@ -8,7 +8,7 @@ class M_outcome extends CI_Model
         parent::__construct();
     }
 
-    public function read($limit, $start, $key, $category)
+    public function read($limit, $start, $key, $category, $user)
     {
         $this->db->select('a.*, b.user_fullname, c.outcome_category_name, d.*');
         $this->db->from('tbl_web_outcome a');
@@ -24,6 +24,10 @@ class M_outcome extends CI_Model
             $this->db->like("a.outcome_name", $key);
             $this->db->or_like("b.user_fullname", $key);
             $this->db->or_like("c.outcome_category_name", $key);
+        }
+
+        if ($user != "") {
+            $this->db->where('a.user_id', $user);
         }
 
         if ($limit != "" or $start != "") {

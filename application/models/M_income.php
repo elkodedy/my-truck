@@ -8,7 +8,7 @@ class M_income extends CI_Model
         parent::__construct();
     }
 
-    public function read($limit, $start, $key, $category)
+    public function read($limit, $start, $key, $category, $user)
     {
         $this->db->select('a.*, b.user_fullname, c.income_category_name, d.*');
         $this->db->from('tbl_web_income a');
@@ -18,6 +18,10 @@ class M_income extends CI_Model
 
         if ($category != "") {
             $this->db->where('a.income_category_id', $category);
+        }
+        
+        if ($user != "") {
+            $this->db->where('a.user_id', $user);
         }
 
         if ($key != '') {

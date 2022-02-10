@@ -24,9 +24,13 @@ class Income extends CI_Controller
     {
         $this->session->unset_userdata('sess_search_income');
 
+        $user = '';
+        if ($this->session->userdata('user_group') == 3)
+            $user = $this->session->userdata('user_id');
+
         // PAGINATION
         $baseUrl    = base_url() . "admin/income/index/";
-        $totalRows  = count((array) $this->m_income->read('', '', '', ''));
+        $totalRows  = count((array) $this->m_income->read('', '', '', '', $user));
         $perPage    = $this->session->userdata('sess_rowpage');
         $uriSegment = 4;
         $paging     = generatePagination($baseUrl, $totalRows, $perPage, $uriSegment);
@@ -39,7 +43,7 @@ class Income extends CI_Controller
         //DATA
         $data['setting'] = getSetting();
         $data['title']   = 'Pemasukkan';
-        $data['income']    = $this->m_income->read($perPage, $page, '', '');
+        $data['income']    = $this->m_income->read($perPage, $page, '', '', $user);
 
         // TEMPLATE
         $view         = "_backend/income/data";
@@ -57,9 +61,13 @@ class Income extends CI_Controller
             $data['search'] = $this->session->userdata('sess_search_income');
         }
 
+        $user = $this->session->userdata('user_id');
+        if ($this->session->userdata('user_group') == 3)
+            $user = '';
+
         // PAGINATION
         $baseUrl    = base_url() . "admin/income/search/" . $data['search'] . "/";
-        $totalRows  = count((array)$this->m_income->read('', '', $data['search'], ''));
+        $totalRows  = count((array)$this->m_income->read('', '', $data['search'], '', $user));
         $perPage    = $this->session->userdata('sess_rowpage');
         $uriSegment = 5;
         $paging     = generatePagination($baseUrl, $totalRows, $perPage, $uriSegment);
@@ -72,7 +80,7 @@ class Income extends CI_Controller
         //DATA
         $data['setting'] = getSetting();
         $data['title']   = 'Pemasukkan';
-        $data['income']    = $this->m_income->read($perPage, $page, $data['search'], '');
+        $data['income']    = $this->m_income->read($perPage, $page, $data['search'], '', $user);
 
         // TEMPLATE
         $view         = "_backend/income/data";

@@ -40,8 +40,8 @@ class M_link extends CI_Model {
         $this->db->delete('tbl_web_link', array('link_id' => $id));
     }
     
-    public function get($id) {
-        $this->db->where('link_id', $id);
+    public function get() {
+        $this->db->where('link_id', 1);
         $query = $this->db->get('tbl_web_link', 1);
         return $query->result();
     }
@@ -51,4 +51,3 @@ class M_link extends CI_Model {
     }
     
 }
-?>

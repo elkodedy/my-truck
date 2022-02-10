@@ -42,11 +42,6 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for=""><b style="color: black">Modal Awal <span style="color:red">*</span></b></label>
-                                        <input type="number" class="form-control" placeholder="Modal Awal" name="truck_base_modal" required="required" value="<?php echo $truck[0]->truck_base_modal; ?>">
-                                    </div>
-
-                                    <div class="form-group">
                                         <label for=""><b style="color: black">Nomor STNK <span style="color:red">*</span></b></label>
                                         <input type="text" class="form-control" placeholder="Nomor STNK" name="truck_stnk" required="required" value="<?php echo $truck[0]->truck_stnk; ?>">
                                     </div>

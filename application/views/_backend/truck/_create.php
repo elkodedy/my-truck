@@ -38,12 +38,7 @@
                                         <label for=""><b style="color: black">Nama Truk <span style="color:red">*</span></b></label>
                                         <input type="text" class="form-control" placeholder="Nama Truk" name="truck_name" required="required">
                                     </div>
-
-                                    <div class="form-group">
-                                        <label for=""><b style="color: black">Modal Awal <span style="color:red">*</span></b></label>
-                                        <input type="number" class="form-control" placeholder="Modal Awal" name="truck_base_modal" required="required">
-                                    </div>
-
+                                    
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Nomor STNK <span style="color:red">*</span></b></label>
                                         <input type="text" class="form-control" placeholder="Nomor STNK" name="truck_stnk" required="required">
