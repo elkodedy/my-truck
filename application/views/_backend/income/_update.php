@@ -4,7 +4,7 @@
                         <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
                         <?php
                         if ($this->uri->segment(3)) {
                             echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
@@ -72,7 +72,7 @@
                                     </div>
 
                                     <div class="form-group" id="income_name" style="display: <?php if ($income[0]->income_category_id != 1) echo 'none'; ?>;">
-                                        <label for=""><b style="color: black">Pemasukkan <span style="color:red">*</span></b></label>
+                                        <label for=""><b style="color: black">Pemasukkan <span style="color:red">*</span></b><small style="color:grey"> silahkan mengisi jenis pengeluaran secara manual</small></label>
                                         <input type="text" class="form-control" placeholder="Pemasukkan" name="income_name" required="required" value="<?php echo $income[0]->income_name; ?>">
                                     </div>
 
@@ -98,7 +98,7 @@
 
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Deskripsi <span style="color:red">*</span></b></label>
-                                        <textarea cols="80" id="editor" name="income_desc" rows="10" style="resize:none;max-width:700px;"><?php echo $income[0]->income_desc; ?></textarea>
+                                        <textarea class="form-control" name="income_desc" rows="10"><?php echo $income[0]->income_desc; ?></textarea>
                                     </div>
 
                                 </div>

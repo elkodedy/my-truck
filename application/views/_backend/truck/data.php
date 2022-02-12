@@ -4,7 +4,7 @@
                         <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
                         <?php
                         if ($this->uri->segment(3)) {
                             echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
@@ -69,13 +69,13 @@
                                 <table class="table table-bordered">
                                     <tr style="background-color: gray;color:white">
                                         <th style="width: 60px">No</th>
-                                        <th style="width: 20%">#aksi</th>
                                         <th>Nama Truk</th>
                                         <th>Nomor Plat</th>
                                         <th>Nomor STNK</th>
                                         <th>Merk</th>
                                         <th>Warna Body</th>
                                         <th>Tahun Keluar</th>
+                                        <th style="width: 20%">#aksi</th>
                                     </tr>
                                     <?php
                                     if ($truck) {
@@ -86,17 +86,17 @@
                                     ?>
                                             <tr>
                                                 <td><?php echo $no + $numbers; ?></td>
-                                                <td>
-                                                    <!-- <a href="<?php echo site_url('admin/truck/detail_page/' . $key->truck_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a> -->
-                                                    <a href="<?php echo site_url('admin/truck/update_page/' . $key->truck_id) ?>" class="btn btn-xs btn-flat btn-warning">update</a>
-                                                    <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->truck_id; ?>">hapus</button>
-                                                </td>
                                                 <td><?php echo $key->truck_name; ?></td>
                                                 <td><?php echo $key->truck_plate; ?></td>
                                                 <td><?php echo $key->truck_stnk; ?></td>
                                                 <td><?php echo $key->truck_brand; ?></td>
                                                 <td><?php echo $key->truck_color; ?></td>
                                                 <td><?php echo $key->truck_year; ?></td>
+                                                <td>
+                                                    <a href="<?php echo site_url('admin/truck/detail_page/' . $key->truck_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a>
+                                                    <a href="<?php echo site_url('admin/truck/update_page/' . $key->truck_id) ?>" class="btn btn-xs btn-flat btn-warning">edit</a>
+                                                    <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->truck_id; ?>">hapus</button>
+                                                </td>
                                             </tr>
 
 

@@ -4,7 +4,7 @@
                         <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
                         <?php
                         if ($this->uri->segment(3)) {
                             echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
@@ -69,13 +69,13 @@
                                 <table class="table table-bordered">
                                     <tr style="background-color: gray;color:white">
                                         <th style="width: 60px">No</th>
-                                        <th style="width: 20%">#aksi</th>
                                         <th>Tanggal</th>
                                         <th>Truk</th>
                                         <th>Supir</th>
                                         <th>Jenis Pengeluaran</th>
                                         <th>Pengeluaran</th>
                                         <th>Total Harga</th>
+                                        <th style="width: 20%">#aksi</th>
                                     </tr>
                                     <?php
                                     if ($outcome) {
@@ -86,17 +86,17 @@
                                     ?>
                                             <tr>
                                                 <td><?php echo $no + $numbers; ?></td>
-                                                <td>
-                                                    <!-- <a href="<?php echo site_url('admin/outcome/detail_page/' . $key->outcome_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a> -->
-                                                    <a href="<?php echo site_url('admin/outcome/update_page/' . $key->outcome_id) ?>" class="btn btn-xs btn-flat btn-warning">update</a>
-                                                    <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->outcome_id; ?>">hapus</button>
-                                                </td>
                                                 <td><?php echo indonesiaDate($key->outcome_date); ?></td>
                                                 <td><?php echo $key->truck_name; ?></td>
                                                 <td><?php echo $key->user_fullname; ?></td>
                                                 <td><?php echo $key->outcome_category_name; ?></td>
                                                 <td><?php echo $key->outcome_name; ?></td>
                                                 <td><?php echo indonesiaCurrency($key->outcome_price); ?></td>
+                                                <td>
+                                                    <a href="<?php echo site_url('admin/outcome/detail_page/' . $key->outcome_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a>
+                                                    <a href="<?php echo site_url('admin/outcome/update_page/' . $key->outcome_id) ?>" class="btn btn-xs btn-flat btn-warning">edit</a>
+                                                    <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->outcome_id; ?>">hapus</button>
+                                                </td>
                                             </tr>
 
                                             <!-- Modal Delete-->

@@ -4,7 +4,7 @@
                         <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
                         <?php
                         if ($this->uri->segment(3)) {
                             echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
@@ -86,7 +86,7 @@
                                             <td><?php echo $no + $numbers; ?></td>
                                             <td>
                                                 <a href="<?php echo site_url('admin/news/detail_page/' . $key->news_id); ?>" class="btn btn-xs btn-flat btn-info">detail</a>
-                                                <a href="<?php echo site_url('admin/news/update_page/' . $key->news_id) ?>" class="btn btn-xs btn-flat btn-warning">update</a>
+                                                <a href="<?php echo site_url('admin/news/update_page/' . $key->news_id) ?>" class="btn btn-xs btn-flat btn-warning">edit</a>
                                                 <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->news_id; ?>">hapus</button>
                                             </td>
                                             <td><?php echo indonesiaDate($key->news_date); ?></td>

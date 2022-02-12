@@ -1,36 +1,36 @@
             <div class="content-wrapper">
                 <section class="content-header">
                     <h1 class="fontPoppins">
-                        <?php echo strtoupper($title);?>
+                        <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard');?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
-                        <?php 
-                            if($this->uri->segment(3)){
-                                echo '<li class="active"><a href="'.site_url('admin/'.$this->uri->segment(2)).'">'.strtoupper($title).'</a></li>';
-                                echo '<li class="active">'.strtoupper($this->uri->segment(3)).'</li>';
-                            }else{
-                                echo '<li class="active">'.strtoupper($title).'</li>';
-                            }
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
+                        <?php
+                        if ($this->uri->segment(3)) {
+                            echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
+                            echo '<li class="active">' . strtoupper($this->uri->segment(3)) . '</li>';
+                        } else {
+                            echo '<li class="active">' . strtoupper($title) . '</li>';
+                        }
                         ?>
-                       
+
                     </ol>
                 </section>
-                
+
                 <section class="content">
                     <div class="box">
-                        <?php echo form_open_multipart("admin/news/create")?>
+                        <?php echo form_open_multipart("admin/news/create") ?>
                         <div class="box-header with-border">
-                            
+
                             <div class="box-tools pull-right">
                                 <div style="padding-top:10px">
-                                    <a href="<?php echo site_url('admin/news')?>" class="btn btn-warning btn-flat" title="kembali ke halaman sebelumnya">kembali</a>
+                                    <a href="<?php echo site_url('admin/news') ?>" class="btn btn-warning btn-flat" title="kembali ke halaman sebelumnya">kembali</a>
                                     <button type="submit" class="btn btn-primary btn-flat" title="Tambah data"> tambah</button>
                                 </div>
                             </div>
                         </div>
                         <div class="box-body">
-                            <?php echo csrf();?>
+                            <?php echo csrf(); ?>
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
@@ -38,9 +38,9 @@
                                         <select class="form-control select2" name="field_id" required style="width:100%">
                                             <option value="">-Pilih Bidang Publikasi-</option>
                                             <?php
-                                                foreach($field as $f){
-                                                    echo '<option value="'.$f->field_id.'">'.$f->field_name.'</option>';
-                                                }
+                                            foreach ($field as $f) {
+                                                echo '<option value="' . $f->field_id . '">' . $f->field_name . '</option>';
+                                            }
                                             ?>
 
                                         </select>
@@ -50,9 +50,9 @@
                                         <select class="form-control select2" name="news_category_id" required style="width:100%">
                                             <option value="">-Pilih Kategori Informasi-</option>
                                             <?php
-                                                foreach($news_category as $nw){
-                                                    echo '<option value="'.$nw->news_category_id.'">'.$nw->news_category_name.'</option>';
-                                                }
+                                            foreach ($news_category as $nw) {
+                                                echo '<option value="' . $nw->news_category_id . '">' . $nw->news_category_name . '</option>';
+                                            }
                                             ?>
 
                                         </select>

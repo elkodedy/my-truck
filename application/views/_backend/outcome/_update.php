@@ -4,7 +4,7 @@
                         <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
                         <?php
                         if ($this->uri->segment(3)) {
                             echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
@@ -71,7 +71,7 @@
                                     </div>
 
                                     <div class="form-group" id="outcome_name" style="display: <?php if ($outcome[0]->outcome_category_id != 1) echo 'none'; ?>;">
-                                        <label for=""><b style="color: black">Pengeluaran <span style="color:red">*</span></b></label>
+                                        <label for=""><b style="color: black">Pengeluaran <span style="color:red">*</span></b><small style="color:grey"> silahkan mengisi jenis pengeluaran secara manual</small></label>
                                         <input type="hidden" class="form-control" name="outcome_id" required="required" value="<?php echo $outcome[0]->outcome_id; ?>">
                                         <input type="text" class="form-control" placeholder="Pengeluaran" name="outcome_name" value="<?php echo $outcome[0]->outcome_name; ?>">
                                     </div>
@@ -98,7 +98,7 @@
 
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Deskripsi</b></label>
-                                        <textarea cols="80" id="editor" name="outcome_desc" rows="10" style="resize:none;max-width:700px;"><?php echo $outcome[0]->outcome_desc; ?></textarea>
+                                        <textarea class="form-control" name="outcome_desc" rows="10"><?php echo $outcome[0]->outcome_desc; ?></textarea>
                                     </div>
 
                                 </div>

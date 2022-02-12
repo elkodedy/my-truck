@@ -44,16 +44,16 @@
                                         ?>
                                         <p>
                                             <?php echo $this->session->userdata('user_fullname'); ?>
-                                            <small>Member since<br><?php echo $this->session->userdata('user_createtime'); ?></small>
+                                            <small>Terdaftar sejak <br><?php echo $this->session->userdata('user_createtime'); ?></small>
                                         </p>
                                     </li>
 
                                     <li class="user-footer">
                                         <div class="pull-left">
-                                            <a href="<?php echo site_url('admin/profile') ?>" class="btn btn-default btn-flat">Profile</a>
+                                            <a href="<?php echo site_url('admin/profile') ?>" class="btn btn-default btn-flat">Profil Saya</a>
                                         </div>
                                         <div class="pull-right">
-                                            <a href="<?php echo site_url('auth/logout') ?>" class="btn btn-google btn-flat">Sign out</a>
+                                            <a href="<?php echo site_url('auth/logout') ?>" class="btn btn-google btn-flat">Keluar</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
 
-                    <form action="#" method="get" class="sidebar-form">
+                    <!-- <form action="#" method="get" class="sidebar-form">
                         <div class="input-group">
                             <input type="text" name="q" class="form-control" placeholder="Search...">
                             <span class="input-group-btn">
@@ -102,13 +102,13 @@
                                 </button>
                             </span>
                         </div>
-                    </form>
+                    </form> -->
 
                     <?php if ($this->session->userdata('user_group') == 1 or $this->session->userdata('user_group') == 2) { ?>
                         <!-- Administrator Menu -->
                         <ul class="sidebar-menu" data-widget="tree">
-                            <li class="header">MAIN NAVIGATION</li>
-                            <li class="active"><a href="<?php echo site_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                            <li class="header">Menu Utama</li>
+                            <li class="active"><a href="<?php echo site_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
                             <li class="treeview">
                                 <a href="#"> <i class="fa fa-money"></i> <span>Pemasukkan</span>
                                     <span class="pull-right-container">
@@ -134,20 +134,23 @@
                             <li><a href="<?php echo site_url('admin/truck') ?>"><i class="fa fa-bus"></i> <span>Truk</span></a></li>
                             <li><a href="<?php echo site_url('admin/asset') ?>"><i class="fa fa-gears"></i> <span>Asset</span></a></li>
 
-                            <li class="header">CORE BASE</li>
-                            <li class="treeview">
-                                <a href="#"> <i class="fa fa-users"></i> <span>Pengguna</span>
-                                    <span class="pull-right-container">
-                                        <i class="fa fa-angle-left pull-right"></i>
-                                    </span>
-                                </a>
-                                <ul class="treeview-menu">
-                                    <li><a href="<?php echo site_url('admin/group'); ?>"><i class="fa fa-circle-o"></i> Group</a></li>
-                                    <li><a href="<?php echo site_url('admin/user'); ?>"><i class="fa fa-circle-o"></i> User</a></li>
-                                </ul>
-                            </li>
+                            <?php if ($this->session->userdata('user_group') == 2) { ?>
+                                <li><a href="<?php echo site_url('admin/user'); ?>"><i class="fa fa-users"></i> Supir</a></li>
+                            <?php } ?>
 
                             <?php if ($this->session->userdata('user_group') == 1) { ?>
+                                <li class="header">Menu Admin</li>
+                                <li class="treeview">
+                                    <a href="#"> <i class="fa fa-users"></i> <span>Pengguna</span>
+                                        <span class="pull-right-container">
+                                            <i class="fa fa-angle-left pull-right"></i>
+                                        </span>
+                                    </a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="<?php echo site_url('admin/group'); ?>"><i class="fa fa-circle-o"></i> Group</a></li>
+                                        <li><a href="<?php echo site_url('admin/user'); ?>"><i class="fa fa-circle-o"></i> Supir</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="<?php echo site_url('admin/backup'); ?>"><i class="fa fa-circle-o text-red"></i> <span>Backup & Restore DB</span></a></li>
                                 <li><a href="<?php echo site_url('admin/log'); ?>"><i class="fa fa-circle-o text-red"></i> <span>System Logs</span></a></li>
                             <?php } ?>
@@ -157,8 +160,8 @@
 
                         <!-- Inputer Menu -->
                         <ul class="sidebar-menu" data-widget="tree">
-                            <li class="header">MAIN NAVIGATION</li>
-                            <li class="active"><a href="<?php echo site_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
+                            <li class="header">Menu Utama</li>
+                            <li class="active"><a href="<?php echo site_url('admin/dashboard') ?>"><i class="fa fa-dashboard"></i> <span>Beranda</span></a></li>
                             <li class="treeview">
                                 <a href="#"> <i class="fa fa-money"></i> <span>Pemasukkan</span>
                                     <span class="pull-right-container">

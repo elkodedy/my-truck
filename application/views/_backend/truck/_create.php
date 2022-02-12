@@ -4,7 +4,7 @@
                         <?php echo strtoupper($title); ?>
                     </h1>
                     <ol class="breadcrumb">
-                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+                        <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
                         <?php
                         if ($this->uri->segment(3)) {
                             echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($title) . '</a></li>';
@@ -38,7 +38,7 @@
                                         <label for=""><b style="color: black">Nama Truk <span style="color:red">*</span></b></label>
                                         <input type="text" class="form-control" placeholder="Nama Truk" name="truck_name" required="required">
                                     </div>
-                                    
+
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Nomor STNK <span style="color:red">*</span></b></label>
                                         <input type="text" class="form-control" placeholder="Nomor STNK" name="truck_stnk" required="required">
@@ -71,7 +71,7 @@
 
                                     <div class="form-group">
                                         <label for=""><b style="color: black">Deskripsi</b></label>
-                                        <textarea cols="80" id="editor" name="truck_desc" rows="10" style="resize:none;max-width:700px;"></textarea>
+                                        <textarea class="form-control" name="truck_desc" rows="10"></textarea>
                                     </div>
 
                                 </div>

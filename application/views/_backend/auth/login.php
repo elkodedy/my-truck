@@ -33,7 +33,7 @@
 
         <div class="login-box-body">
 
-            <p class="login-box-msg">Sign in to start your session</p>
+            <p class="login-box-msg">Silahkan masuk untuk memulai</p>
             <?php
             if ($this->session->flashdata('alert')) {
                 echo $this->session->flashdata('alert');
@@ -54,7 +54,7 @@
             <hr style="border: 0.5px dashed #d2d6de">
             <div class="row">
                 <div class="col-xs-12">
-                    <button type="submit" class="btn btn-facebook btn-block btn-flat">Sign In</button>
+                    <button type="submit" class="btn btn-facebook btn-block btn-flat">Masuk</button>
                 </div>
             </div>
             <?php echo form_close(); ?>
@@ -65,7 +65,7 @@
             <hr style="border: 0.5px dashed #d2d6de">
             <p class="text-center">
                 <?php echo $setting[0]->setting_owner_name; ?><br>
-                <b>Since @<?php echo date('Y'); ?></b>
+                <b>Sejak @<?php echo date('Y'); ?></b>
             </p>
         </div>
     </div>

@@ -21,7 +21,7 @@
             <?php echo strtoupper($this->uri->segment(2)); ?>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+            <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
         </ol>
         </ol>
     </section>

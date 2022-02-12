@@ -4,7 +4,7 @@
             <?php echo strtoupper($title); ?>
         </h1>
         <ol class="breadcrumb">
-            <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> DASHBOARD</a></li>
+            <li><a href="<?php echo site_url('admin/dashboard'); ?>"><i class="fa fa-dashboard"></i> BERANDA</a></li>
             <?php
             if ($this->uri->segment(3)) {
                 echo '<li class="active"><a href="' . site_url('admin/' . $this->uri->segment(2)) . '">' . strtoupper($this->uri->segment(2)) . '</a></li>';
@@ -97,9 +97,9 @@
                 <table class="table table-bordered">
                     <tr style="background-color: gray;color:white">
                         <th style="width: 60px">No</th>
-                        <th style="width: 20%">#aksi</th>
                         <th>Nama Jenis Pengeluaran</th>
                         <th>Deskripsi</th>
+                        <th style="width: 20%">#aksi</th>
                     </tr>
                     <?php
                     if ($outcome_category) {
@@ -110,13 +110,13 @@
                     ?>
                             <tr>
                                 <td><?php echo $no + $numbers; ?></td>
+                                <td><?php echo $key->outcome_category_name; ?></td>
+                                <td><?php echo $key->outcome_category_desc; ?></td>
                                 <td>
                                     <!-- <button class="btn btn-xs btn-flat btn-info" data-toggle="modal" data-target="#modalDetail<?php echo $key->outcome_category_id; ?>">detail</button> -->
                                     <button class="btn btn-xs btn-flat btn-warning" data-toggle="modal" data-target="#modalUpdate<?php echo $key->outcome_category_id; ?>">update</button>
                                     <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->outcome_category_id ?>">hapus</button>
                                 </td>
-                                <td><?php echo $key->outcome_category_name; ?></td>
-                                <td><?php echo $key->outcome_category_desc; ?></td>
                             </tr>
 
                             <!-- Modal Update-->

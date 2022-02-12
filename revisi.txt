@@ -1,0 +1,11 @@
+Ganti bahasa indonesia (login page, user->pengguna, dashboard->beranda, )
+
+delete search
+
+main navigation, core base
+
+refresh
+
+tombol detail
+
+isi sendari --> lainnya
