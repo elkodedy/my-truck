@@ -73,7 +73,7 @@
 
                         <div class="form-group">
                             <label for=""><b style="color: black">Deskripsi</b></label>
-                            <textarea class="form-control" name="truck_desc" rows="10"><?php echo $truck[0]->truck_desc; ?></textarea>
+                            <textarea readonly class="form-control" name="truck_desc" rows="10"><?php echo $truck[0]->truck_desc; ?></textarea>
                         </div>
 
 

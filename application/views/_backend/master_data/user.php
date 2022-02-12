@@ -118,11 +118,11 @@
                             <table class="table table-bordered">
                                 <tr style="background-color: gray;color:white">
                                     <th style="width: 60px">No</th>
-                                    <th style="width: 20%">#aksi</th>
                                     <th>Nama</th>
                                     <th>Username</th>
                                     <th>Email</th>
                                     <th>Group</th>
+                                    <th style="width: 20%">#aksi</th>
                                 </tr>
                                 <?php
                                 if ($user) {
@@ -133,15 +133,15 @@
                                 ?>
                                         <tr>
                                             <td><?php echo $no + $numbers; ?></td>
+                                            <td><?php echo $key->user_fullname; ?></td>
+                                            <td><?php echo $key->user_name; ?></td>
+                                            <td><?php echo $key->user_email; ?></td>
+                                            <td><?php echo $key->group_name; ?></td>
                                             <td>
                                                 <button class="btn btn-xs btn-flat btn-info" data-toggle="modal" data-target="#modalDetail<?php echo $key->user_id; ?>">detail</button>
                                                 <button class="btn btn-xs btn-flat btn-warning" data-toggle="modal" data-target="#modalUpdate<?php echo $key->user_id; ?>">update</button>
                                                 <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->user_id ?>">hapus</button>
                                             </td>
-                                            <td><?php echo $key->user_fullname; ?></td>
-                                            <td><?php echo $key->user_name; ?></td>
-                                            <td><?php echo $key->user_email; ?></td>
-                                            <td><?php echo $key->group_name; ?></td>
                                         </tr>
 
                                         <!-- Modal Update-->

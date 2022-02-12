@@ -39,7 +39,7 @@
 
                         <div class="form-group">
                             <label for=""><b style="color: black">Truk <span style="color:red">*</span></b></label>
-                            <select readonly class="form-control select2" name="truck_id" required style="width:100%">
+                            <select disabled class="form-control select2" name="truck_id" required style="width:100%">
                                 <option value="">-Pilih Truk-</option>
                                 <?php
                                 foreach ($truck as $nw) {
@@ -55,7 +55,7 @@
 
                         <div class="form-group">
                             <label for=""><b style="color: black">Jenis Pengeluaran <span style="color:red">*</span></b></label>
-                            <select readonly class="form-control select2" name="outcome_category_id" required style="width:100%">
+                            <select disabled class="form-control select2" name="outcome_category_id" required style="width:100%">
                                 <option value="">-Pilih Jenis Pengeluaran-</option>
                                 <?php
                                 foreach ($outcome_category as $nw) {
@@ -97,7 +97,7 @@
 
                         <div class="form-group">
                             <label for=""><b style="color: black">Deskripsi</b></label>
-                            <textarea class="form-control" name="outcome_desc" rows="10"><?php echo $outcome[0]->outcome_desc; ?></textarea>
+                            <textarea readonly class="form-control" name="outcome_desc" rows="10"><?php echo $outcome[0]->outcome_desc; ?></textarea>
                         </div>
 
                     </div>

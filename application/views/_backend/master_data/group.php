@@ -92,8 +92,8 @@
                             <table class="table table-bordered">
                                 <tr style="background-color: gray;color:white">
                                     <th style="width: 60px">No</th>
-                                    <th style="width: 20%">#aksi</th>
                                     <th>Nama Group</th>
+                                    <th style="width: 20%">#aksi</th>
                                 </tr>
                                 <?php
                                 if ($group) {
@@ -104,12 +104,12 @@
                                 ?>
                                         <tr>
                                             <td><?php echo $no + $numbers; ?></td>
+                                            <td><?php echo $key->group_name; ?></td>
                                             <td>
                                                 <button class="btn btn-xs btn-flat btn-info" data-toggle="modal" data-target="#modalDetail<?php echo $key->group_id; ?>">detail</button>
                                                 <button class="btn btn-xs btn-flat btn-warning" data-toggle="modal" data-target="#modalUpdate<?php echo $key->group_id; ?>">update</button>
                                                 <button class="btn btn-xs btn-flat btn-danger" data-toggle="modal" data-target="#modalDelete<?php echo $key->group_id ?>">hapus</button>
                                             </td>
-                                            <td><?php echo $key->group_name; ?></td>
                                         </tr>
 
                                         <!-- Modal Update-->

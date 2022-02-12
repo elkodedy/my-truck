@@ -39,7 +39,7 @@
 
                         <div class="form-group">
                             <label for=""><b style="color: black">Truk <span style="color:red">*</span></b></label>
-                            <select readonly class="form-control select2" name="truck_id" required style="width:100%">
+                            <select disabled class="form-control select2" name="truck_id" required style="width:100%">
                                 <option value="">-Pilih Truk-</option>
                                 <?php
                                 foreach ($truck as $nw) {
@@ -56,7 +56,7 @@
                         <div class="form-group">
                             <input readonly type="hidden" class="form-control" name="income_id" required="required" value="<?php echo $income[0]->income_id; ?>">
                             <label for=""><b style="color: black">Jenis Pemasukkan <span style="color:red">*</span></b></label>
-                            <select readonly class="form-control select2" name="income_category_id" required style="width:100%" onchange="selectIncome(this.value)">
+                            <select disabled class="form-control select2" name="income_category_id" required style="width:100%" onchange="selectIncome(this.value)">
                                 <option value="">-Pilih Jenis Pemasukkan-</option>
                                 <?php
                                 foreach ($income_category as $nw) {
