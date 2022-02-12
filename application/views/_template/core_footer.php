@@ -1,4 +1,4 @@
-        <footer class="main-footer">
+<footer class="main-footer">
             <div class="pull-right hidden-xs">
                 <b>Version</b> 0.0.1
             </div>
@@ -66,13 +66,13 @@
                 });
 
                 // CKEDITOR
-                CKEDITOR.replace('editor', {
-                    toolbar: 'MyToolbar',
-                    width: "100%",
-                    filebrowserBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html',
-                    filebrowserImageBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Images',
-                    filebrowserFlashBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Flash',
-                });
+                // CKEDITOR.replace('editor', {
+                //     toolbar: 'MyToolbar',
+                //     width: "100%",
+                //     filebrowserBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html',
+                //     filebrowserImageBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Images',
+                //     filebrowserFlashBrowseUrl: '<?php echo base_url(); ?>assets/core-thirdparty/ckfinder/ckfinder.html?type=Flash',
+                // });
 
 
 
@@ -101,6 +101,18 @@
                     $('#outcome_name input').attr('required', false);
                 }
             }
+            // function lock (orientation) {
+            //   // (A1) GO INTO FULL SCREEN FIRST
+            //   let de = document.documentElement;
+            //   if (de.requestFullscreen) { de.requestFullscreen(); }
+            //   else if (de.mozRequestFullScreen) { de.mozRequestFullScreen(); }
+            //   else if (de.webkitRequestFullscreen) { de.webkitRequestFullscreen(); }
+            //   else if (de.msRequestFullscreen) { de.msRequestFullscreen(); }
+            
+            //   // (A2) THEN LOCK ORIENTATION
+            //   screen.orientation.lock(orientation);
+            // }
+            // lock('potrait');
         </script>
         </body>
 
